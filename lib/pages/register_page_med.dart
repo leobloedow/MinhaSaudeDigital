@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RegisterPageMed extends StatefulWidget {
   const RegisterPageMed({super.key});
@@ -17,8 +16,7 @@ class _RegisterPageMedState extends State<RegisterPageMed> {
       appBar: AppBar(
         title: Text(
           "Registro de médico",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.bold, color: Colors.grey),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
         ),
         centerTitle: true,
       ),
@@ -26,8 +24,7 @@ class _RegisterPageMedState extends State<RegisterPageMed> {
         child: Padding(
           padding: const EdgeInsets.all(40),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text("Registro de médico:",
-                style: GoogleFonts.poppins(fontSize: 16)),
+            Text("Registro de médico:", style: TextStyle(fontSize: 16)),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
@@ -57,7 +54,7 @@ class _RegisterPageMedState extends State<RegisterPageMed> {
                           ? const Color.fromARGB(255, 167, 73, 255)
                           : const Color.fromARGB(255, 231, 204, 255)),
                   child: Text('Registrar',
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold)),
                 ),
               ),

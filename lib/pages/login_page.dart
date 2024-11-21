@@ -82,15 +82,14 @@ class _LoginPageState extends State<LoginPage> {
                           child: Center(
                               child: Text(
                             "Paciente",
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ))),
                       SizedBox(
                           width: 100,
                           child: Center(
                               child: Text("Médico",
-                                  style: GoogleFonts.poppins(
-                                      fontWeight: FontWeight.bold))))
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold))))
                     ],
                   ),
                 ),
@@ -101,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)),
                         hintText: "Email",
-                        hintStyle: GoogleFonts.poppins(color: Colors.grey)),
+                        hintStyle: TextStyle(color: Colors.grey)),
                   ),
                 ),
                 Padding(
@@ -111,14 +110,14 @@ class _LoginPageState extends State<LoginPage> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)),
                         hintText: "Senha",
-                        hintStyle: GoogleFonts.poppins(color: Colors.grey)),
+                        hintStyle: TextStyle(color: Colors.grey)),
                     obscureText: true,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text("Esqueci minha senha/usuário",
-                      style: GoogleFonts.poppins(
+                      style: TextStyle(
                           color: Colors.grey,
                           decoration: TextDecoration.underline,
                           decorationColor: Colors.grey)),
@@ -154,7 +153,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_selPacMed[0]) {
-                          Navigator.pushNamed(context, '/pac_dashboard');
+                          if (_acTermos) {
+                            Navigator.pushNamed(context, '/pac_dashboard');
+                          }
                         } else if (_selPacMed[1]) {}
                       },
                       style: ElevatedButton.styleFrom(
@@ -162,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                               ? Color.fromRGBO(86, 187, 140, 1)
                               : Color.fromRGBO(180, 240, 212, 1)),
                       child: Text('Entrar',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold)),
                     ),
@@ -189,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                               backgroundColor:
                                   const Color.fromARGB(255, 167, 73, 255)),
                           child: Text('Novo Usuário / Cadastrar',
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold)),
                         ),
@@ -234,7 +235,6 @@ class _LoginPageState extends State<LoginPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Contato de\nEmergência",
-                            style: GoogleFonts.poppins(),
                           ),
                         )
                       ]),

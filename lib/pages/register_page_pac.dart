@@ -52,8 +52,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
       appBar: AppBar(
         title: Text(
           "Registro de paciente",
-          style: GoogleFonts.poppins(
-              fontWeight: FontWeight.bold, color: Colors.grey),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
         ),
         centerTitle: true,
       ),
@@ -92,7 +91,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
                       hintText: "Nome completo",
-                      hintStyle: GoogleFonts.poppins(color: Colors.grey)),
+                      hintStyle: TextStyle(color: Colors.grey)),
                 ),
               ),
               Padding(
@@ -102,7 +101,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
                       hintText: "Email",
-                      hintStyle: GoogleFonts.poppins(color: Colors.grey)),
+                      hintStyle: TextStyle(color: Colors.grey)),
                 ),
               ),
               Padding(
@@ -112,7 +111,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
                       hintText: "Senha",
-                      hintStyle: GoogleFonts.poppins(color: Colors.grey)),
+                      hintStyle: TextStyle(color: Colors.grey)),
                   obscureText: true,
                 ),
               ),
@@ -123,7 +122,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
                       hintText: "Confirmar senha",
-                      hintStyle: GoogleFonts.poppins(color: Colors.grey)),
+                      hintStyle: TextStyle(color: Colors.grey)),
                   obscureText: true,
                 ),
               ),
@@ -133,11 +132,10 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                   children: <Widget>[
                     Text(
                       "Sexo:",
-                      style: GoogleFonts.poppins(fontSize: 16),
+                      style: TextStyle(fontSize: 16),
                     ),
                     ListTile(
-                      title: Text('Masculino',
-                          style: GoogleFonts.poppins(fontSize: 16)),
+                      title: Text('Masculino', style: TextStyle(fontSize: 16)),
                       leading: Radio<String>(
                         value: 'm',
                         groupValue: _selSex,
@@ -149,8 +147,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                       ),
                     ),
                     ListTile(
-                      title: Text('Feminino',
-                          style: GoogleFonts.poppins(fontSize: 16)),
+                      title: Text('Feminino', style: TextStyle(fontSize: 16)),
                       leading: Radio<String>(
                         value: 'f',
                         groupValue: _selSex,
@@ -170,7 +167,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                   children: <Widget>[
                     Text(
                       "Tipo sanguíneo:",
-                      style: GoogleFonts.poppins(fontSize: 16),
+                      style: TextStyle(fontSize: 16),
                     ),
                     Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -204,7 +201,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text("Data de nascimento:",
-                          style: GoogleFonts.poppins(fontSize: 16)),
+                          style: TextStyle(fontSize: 16)),
                     ),
                     ElevatedButton(
                       onPressed: _showDatePicker,
@@ -212,7 +209,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                         _selData == null
                             ? 'Selecionar data'
                             : DateFormat('dd/MM/yyyy').format(_selData!),
-                        style: GoogleFonts.poppins(fontSize: 16),
+                        style: TextStyle(fontSize: 16),
                       ),
                     ),
                   ],
@@ -225,8 +222,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("Altura:",
-                          style: GoogleFonts.poppins(fontSize: 16)),
+                      child: Text("Altura:", style: TextStyle(fontSize: 16)),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -236,10 +232,9 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: Colors.grey)),
                           child: DecimalNumberPicker(
-                              textStyle: GoogleFonts.poppins(
-                                  fontSize: 16, color: Colors.grey),
-                              selectedTextStyle:
-                                  GoogleFonts.poppins(fontSize: 24),
+                              textStyle:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                              selectedTextStyle: TextStyle(fontSize: 24),
                               minValue: 50,
                               maxValue: 250,
                               value: _altura,
@@ -250,8 +245,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "cm",
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: Colors.grey),
+                            style: TextStyle(fontSize: 16, color: Colors.grey),
                           ),
                         )
                       ],
@@ -266,8 +260,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("Peso:",
-                          style: GoogleFonts.poppins(fontSize: 16)),
+                      child: Text("Peso:", style: TextStyle(fontSize: 16)),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -277,10 +270,9 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: Colors.grey)),
                           child: DecimalNumberPicker(
-                              textStyle: GoogleFonts.poppins(
-                                  fontSize: 16, color: Colors.grey),
-                              selectedTextStyle:
-                                  GoogleFonts.poppins(fontSize: 24),
+                              textStyle:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                              selectedTextStyle: TextStyle(fontSize: 24),
                               minValue: 15,
                               maxValue: 500,
                               value: _peso,
@@ -291,8 +283,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "Kg",
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, color: Colors.grey),
+                            style: TextStyle(fontSize: 16, color: Colors.grey),
                           ),
                         )
                       ],
@@ -329,7 +320,7 @@ class _RegisterPagePacState extends State<RegisterPagePac> {
                             ? const Color.fromARGB(255, 167, 73, 255)
                             : const Color.fromARGB(255, 231, 204, 255)),
                     child: Text('Registrar',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold)),
                   ),
                 ),

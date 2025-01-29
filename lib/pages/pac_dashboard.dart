@@ -12,15 +12,15 @@ class PacDashboard extends StatefulWidget {
 class _PacDashboardState extends State<PacDashboard> {
   final String _pacNome = "Leonardo";
   final String _pacSobr = "Littig";
-  double _passos = 4000;
-  double _passosMeta = 5000;
-  int _idade = 20;
-  double _peso = 63;
-  double _altura = 181;
-  String _tipoSang = "A+";
-  DateTime _data = DateTime.now().subtract(Duration(hours: 3));
-  int _freq = 98;
-  int _satur = 99;
+  final double _passos = 4000;
+  final double _passosMeta = 5000;
+  final int _idade = 20;
+  final double _peso = 63;
+  final double _altura = 181;
+  final String _tipoSang = "A+";
+  final DateTime _data = DateTime.now().subtract(Duration(hours: 3));
+  final int _freq = 101;
+  final int _satur = 97;
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +44,18 @@ class _PacDashboardState extends State<PacDashboard> {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Icon(
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/perf_completo');
+                        },
+                        style: IconButton.styleFrom(
+                            backgroundColor: Colors.grey[300],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                        icon: Icon(
                           Icons.person_rounded,
                           color: Colors.grey,
-                          size: 75,
+                          size: 65,
                         ),
                       ),
                       Padding(
@@ -134,42 +138,58 @@ class _PacDashboardState extends State<PacDashboard> {
                           color: Colors.grey[300],
                           borderRadius: BorderRadius.circular(25)),
                       height: 100,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text("Frequência Cardíaca:"),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Text(
-                                        "$_freq",
-                                        style: TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(3.0),
-                                        child: Text("bpm"),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 15,
-                                )
-                              ],
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            surfaceTintColor: Colors.transparent,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
+                            backgroundColor: Colors.transparent,
+                            foregroundColor:
+                                const Color.fromARGB(255, 27, 26, 26),
+                            elevation: 0),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/freq_card');
+                        },
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text("Frequência Cardíaca:"),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          "$_freq",
+                                          style: TextStyle(
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Text("bpm"),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 15,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -211,41 +231,57 @@ class _PacDashboardState extends State<PacDashboard> {
                           color: Colors.grey[300],
                           borderRadius: BorderRadius.circular(25)),
                       height: 100,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text("Saturação de Oxigênio:"),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Text(
-                                        "$_satur",
-                                        style: TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(3.0),
-                                        child: Text(
-                                          "%",
-                                          style: TextStyle(fontSize: 15),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            surfaceTintColor: Colors.transparent,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
+                            backgroundColor: Colors.transparent,
+                            foregroundColor: Colors.black,
+                            elevation: 0),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/saturacao');
+                        },
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text("Saturação de Oxigênio:"),
                             ),
-                          )
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          "$_satur",
+                                          style: TextStyle(
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Text("%"),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 15,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -267,7 +303,9 @@ class _PacDashboardState extends State<PacDashboard> {
                         decoration: ShapeDecoration(
                             shape: CircleBorder(), color: Colors.blue[100]),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/chatscreen');
+                          },
                           icon: Icon(
                             Icons.chat,
                             color: Colors.blue,
@@ -293,7 +331,12 @@ class _PacDashboardState extends State<PacDashboard> {
                         decoration: ShapeDecoration(
                             shape: CircleBorder(), color: Colors.green[100]),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              '/perf_completo',
+                            );
+                          },
                           icon: Icon(
                             Icons.person_rounded,
                             color: Colors.green,
@@ -319,7 +362,91 @@ class _PacDashboardState extends State<PacDashboard> {
                         decoration: ShapeDecoration(
                             shape: CircleBorder(), color: Colors.amber[100]),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) => PopScope(
+                                        child: AlertDialog(
+                                      title: Center(
+                                        child: Text(
+                                          "Contato de Emergência:",
+                                          style: TextStyle(fontSize: 32),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      actions: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: ElevatedButton(
+                                              onPressed: () {},
+                                              child: Center(
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Chamar ambulância",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 24),
+                                                  ),
+                                                ),
+                                              )),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: ElevatedButton(
+                                              onPressed: () {},
+                                              child: Center(
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Ligar para o hospital",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 24),
+                                                  ),
+                                                ),
+                                              )),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: ElevatedButton(
+                                              onPressed: () {},
+                                              child: Center(
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Ligar para familiar",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 24),
+                                                  ),
+                                                ),
+                                              )),
+                                        ),
+                                        Center(
+                                          child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.redAccent),
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: Text(
+                                                "Cancelar",
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    color: Colors.white),
+                                              )),
+                                        )
+                                      ],
+                                    )));
+                          },
                           icon: Icon(
                             Icons.warning_rounded,
                             color: Colors.amber,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 
 class PacDashboard extends StatefulWidget {
   const PacDashboard({super.key});
@@ -74,22 +73,6 @@ class _PacDashboardState extends State<PacDashboard> {
                   ),
                   Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SimpleCircularProgressBar(
-                          animationDuration: 1,
-                          maxValue: _passosMeta,
-                          valueNotifier: ValueNotifier(_passos),
-                          size: 75,
-                          mergeMode: true,
-                          backStrokeWidth: 10,
-                          backColor: Colors.grey.shade300,
-                          progressColors: [
-                            const Color.fromARGB(255, 0, 206, 161),
-                            const Color.fromARGB(255, 0, 255, 76)
-                          ],
-                        ),
-                      ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(

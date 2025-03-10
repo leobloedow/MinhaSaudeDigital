@@ -53,7 +53,7 @@ class _PerfilCompletoState extends State<PerfilCompleto> {
                     "Data de nascimento: ",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text("$_nascimento")
+                  Text(_nascimento)
                 ],
               ),
             ),
@@ -66,7 +66,7 @@ class _PerfilCompletoState extends State<PerfilCompleto> {
                     "Tipo Sanguíneo: ",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text("$_tipoSang")
+                  Text(_tipoSang)
                 ],
               ),
             ),
@@ -105,7 +105,7 @@ class _PerfilCompletoState extends State<PerfilCompleto> {
                     "Meta de passos definida: ",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text("${_passosMeta.toStringAsFixed(0)}")
+                  Text(_passosMeta.toStringAsFixed(0))
                 ],
               ),
             ),

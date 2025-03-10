@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hcpa/pages/widgets/messageTile.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -15,7 +14,7 @@ class _ChatScreenState extends State<ChatScreen> {
   List messageList = [
     ["Olá, como posso ajudar?", false]
   ];
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
